@@ -1,13 +1,5 @@
-package main
-
-import (
-	"fmt"
-)
+package gotest
 
 func add(a int, b int) int {
 	return a + b
-}
-
-func main() {
-	fmt.Println("hello , test_ci_go")
 }
