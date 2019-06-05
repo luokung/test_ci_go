@@ -1,7 +1,7 @@
 language: go
 
-go:          # 语言版本号
-  - master   # 默认使用最新版本
+go:
+  - tip
 
 branches:
   only:
@@ -9,8 +9,5 @@ branches:
   - test
 
 script:
-  - go get golang.org/x/tools/cmd/cover
   - go get github.com/mattn/goveralls
-  - go test -v -covermode=count -coverprofile=coverage.out
-  - cd $GOPATH
-  - ./bin/goveralls -coverprofile=coverage.out -service=travis-pro
+  - $GOPATH/bin/goveralls -service=travis-pro
