@@ -3,10 +3,14 @@ language: go
 go:          # 语言版本号
   - master   # 默认使用最新版本
 
+branches:
+  only:
+  # - master
+  - test
+
 script:
   - go get golang.org/x/tools/cmd/cover
   - go get github.com/mattn/goveralls
   - go test -v -covermode=count -coverprofile=coverage.out
   - cd $GOPATH
-  - ls -R
-  - ./bin/goveralls -coverprofile=coverage.out -service=travis-ci -repotoken $COVERALLS_TOKEN
+  - ./bin/goveralls -coverprofile=coverage.out -service=travis-pro -repotoken $COVERALLS_TOKEN
