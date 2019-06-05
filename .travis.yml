@@ -3,16 +3,8 @@ language: go
 go:          # 语言版本号
   - master   # 默认使用最新版本
 
-
-addons:
-  sonarcloud:
-    organization: "luokung" # the key of the org you chose at step #3
-    token:
-      secure: "$SONAR_TOKEN" # encrypted value of your token
-      
 script:
   - go get golang.org/x/tools/cmd/cover
   - go get github.com/mattn/goveralls
   - go test -v -covermode=count -coverprofile=coverage.out
-  - $GOPATH/bin/goveralls -coverprofile=coverage.out -service=travis-ci -repotoken $COVERALLS_TOKEN
-  - go run ./main.go
+  - $HOME/gopath/bin/goveralls -coverprofile=coverage.out -service=travis-ci -repotoken $COVERALLS_TOKEN
