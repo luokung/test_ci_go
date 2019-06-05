@@ -13,4 +13,4 @@ script:
   - go get github.com/mattn/goveralls
   - go test -v -covermode=count -coverprofile=coverage.out
   - cd $GOPATH
-  - ./bin/goveralls -coverprofile=coverage.out -service=travis-pro -repotoken $COVERALLS_TOKEN
+  - ./bin/goveralls -coverprofile=coverage.out -service=travis-pro
