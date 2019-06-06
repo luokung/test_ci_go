@@ -11,5 +11,5 @@ branches:
 script:
   - go get golang.org/x/tools/cmd/cover
   - go get github.com/mattn/goveralls
-  - go test -v 
-  - $GOPATH/bin/goveralls -service=travis-ci
+  - go test -v -covermode=count -coverprofile=coverage.out
+  - $GOPATH/bin/goveralls -coverprofile=coverage.out -service=travis-pro -repotoken "9kZOZwQhGLBmuzrrbCQOk2dzXKxlMoPZL"
